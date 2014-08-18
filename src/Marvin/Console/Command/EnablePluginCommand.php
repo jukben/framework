@@ -29,7 +29,7 @@ EOT
         );
 
         // Load the plugins config file
-        $configFile = sprintf('%s/config/plugins.php', __DIR__.'/../../../..');
+        $configFile = sprintf('%s/config/plugins.php', PROJECT_DIR);
         $plugins = include($configFile);
 
         // Add the new plugin to the plugins array

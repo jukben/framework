@@ -5,8 +5,6 @@ namespace Marvin\Console\Command;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Formatter\OutputFormatterStyle;
 
-define('PROJECT_DIR', __DIR__.'/../../../..');
-
 class BaseCommand extends Command
 {
     protected function execute($input, $output)

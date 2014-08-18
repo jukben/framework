@@ -22,7 +22,7 @@ EOT
         parent::execute($input, $output);
 
         // Load the plugins config file
-        $configFile = sprintf('%s/config/plugins.php', __DIR__.'/../../../..');
+        $configFile = sprintf('%s/config/plugins.php', PROJECT_DIR);
         $plugins = include($configFile);
 
         $helper = $this->getHelper('question');
