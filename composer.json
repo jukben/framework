@@ -1,0 +1,29 @@
+{
+    "name": "the-marvin-bot/framework",
+    "description": "Marvin is a user-friendly bot for Slack",
+    "keywords": ["marvin", "slack", "bot", "robot"],
+    "homepage": "http://marvin.rocks",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Wouter Peschier",
+            "email": "kielabokkie@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "symfony/console": "~2.5",
+        "symfony/filesystem": "~2.5",
+        "corneltek/pux": "~1.5",
+        "guzzlehttp/guzzle": "~4.2"
+    },
+    "require-dev": {
+        "monolog/monolog": "~1.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "Marvin\\": "src/Marvin"
+        }
+    },
+    "bin": ["marvin"]
+}

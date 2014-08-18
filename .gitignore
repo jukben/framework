@@ -1,0 +1,6 @@
+/vendor/
+/composer.lock
+debug.log
+/workbench
+/config
+/public

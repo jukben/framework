@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+include_once __DIR__ . '/vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+
+$app = new Application('Marvin', '1.0.0');
+$app->addCommands(array(
+    new Marvin\Console\Command\ServeCommand(),
+    new Marvin\Console\Command\CreatePluginCommand(),
+    new Marvin\Console\Command\FinishPluginCommand(),
+    new Marvin\Console\Command\EnablePluginCommand(),
+    new Marvin\Console\Command\DisablePluginCommand(),
+    new Marvin\Console\Command\PublishConfigCommand(),
+));
+$app->run();
