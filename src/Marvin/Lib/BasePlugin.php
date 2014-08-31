@@ -43,7 +43,11 @@ abstract class BasePlugin
 
     public function getConfigVariable($key)
     {
-        return Config::getPluginConfig('Weather', $key);
+        // Get the classname without the namespace
+        $class = explode('\\', get_class($this));
+        $className = end($class);
+
+        return Config::getPluginConfig($className, $key);
     }
 
     public function reply($text, $channel = null, $username = null, $icon = null)

@@ -1,8 +1,6 @@
 {
     "name": "the-marvin-bot/framework",
-    "description": "Marvin is a user-friendly bot for Slack",
-    "keywords": ["marvin", "slack", "bot", "robot"],
-    "homepage": "http://marvin.rocks",
+    "description": "The Marvin Framework",
     "license": "MIT",
     "authors": [
         {

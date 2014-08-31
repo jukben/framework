@@ -32,11 +32,13 @@ EOT
             $class = explode('\\', get_class($obj));
             $className = end($class);
 
-            foreach ($obj->config as $key => $value) {
-                $config[$key] = $value;
-            }
+            if (count($obj->config) > 1) {
+                foreach ($obj->config as $key => $value) {
+                    $config[$key] = $value;
+                }
 
-            Config::publishPluginConfig($className, $config);
+                Config::publishPluginConfig($className, $config);
+            }
         }
 
         $output->writeln("\n<info>Done</info>");
