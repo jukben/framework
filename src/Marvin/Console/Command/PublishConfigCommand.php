@@ -32,7 +32,7 @@ EOT
             $class = explode('\\', get_class($obj));
             $className = end($class);
 
-            if (count($obj->config) > 1) {
+            if (count($obj->config) > 0) {
                 foreach ($obj->config as $key => $value) {
                     $config[$key] = $value;
                 }
