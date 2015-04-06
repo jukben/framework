@@ -15,6 +15,8 @@ abstract class BasePlugin
 
     public $request;
 
+    public $slackApi;
+
     public function __construct($request)
     {
         $this->request = $request;
@@ -29,6 +31,12 @@ abstract class BasePlugin
         if (method_exists($this, 'config')) {
             $this->config();
         }
+
+        $token = Config::get('app.token');
+        $icon = Config::get('app.icon');
+
+        // Initialize Slack API
+        $this->slackApi = new SlackApi($token, $icon);
     }
 
     public function addDescriptionLine($command, $description)
@@ -61,14 +69,7 @@ abstract class BasePlugin
             $body['icon_emoji'] = $icon;
         }
 
-        // Get Slack API token from the config
-        $token = Config::get('app.token');
-        $icon = Config::get('app.icon');
-
-        // Initialize Slack API
-        $slackApi = new SlackApi($token, $icon);
-
-        $slackApi->chatPostMessage($text, $channel, $username);
+        $this->slackApi->chatPostMessage($text, $channel, $username);
     }
 
     abstract function trigger();

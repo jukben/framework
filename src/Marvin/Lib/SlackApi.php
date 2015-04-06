@@ -35,4 +35,16 @@ class SlackApi
         $client = new \GuzzleHttp\Client();
         $response = $client->get($url);
     }
+
+    public function sendMethod($method, $parameters = array())
+    {
+        $parameters['token'] = $this->token;
+        $parameters['pretty'] = 1;
+        
+        $url = sprintf('%s/%s?%s', $this->baseUrl, $method, http_build_query($parameters));
+
+        $client = new \GuzzleHttp\Client();
+        $response = $client->get($url);
+        return $response->getBody();
+    }
 }
